@@ -1,0 +1,194 @@
+.footer {
+  position: relative;
+  background-color: $colorBlack;
+  width: 100%;
+  color: $colorWhite;
+
+  @include responsive1439 {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  input {
+    color: $colorWhite;
+
+    &::placeholder {
+      color: $colorWhite-a4;
+    }
+  }
+
+  &-top {
+    padding: 80px 0;
+
+    @include responsive1279 {
+      padding: 32px 0;
+    }
+
+    @include responsive767 {
+      padding: 16px 0;
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include responsive1279 {
+        gap: 10px;
+      }
+    }
+  }
+
+  &-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 32px;
+    position: relative;
+    z-index: 3;
+
+    @include responsive1279 {
+      gap: 16px;
+    }
+
+    @include responsive767 {
+      flex-direction: column;
+    }
+
+    .input-item {
+      width: calc(100% / 4);
+
+      @include responsive767 {
+        width: 100%;
+      }
+    }
+
+    .btn {
+      width: calc(100% / 4);
+      justify-content: center;
+      min-height: 74px;
+
+      @include responsive1279 {
+        min-height: 50px;
+        min-width: 222px;
+      }
+
+      @include responsive767 {
+        width: 100%;
+      }
+    }
+  }
+
+  &-center {
+    border-top: solid 1px $colorWhite-a5;
+    border-bottom: solid 1px $colorWhite-a5;
+    line-height: 24px;
+    
+    .logo {
+      width: 160px;
+      height: 60px;
+
+      @include responsive1279 {
+        width: 112px;
+        height: 42px;
+      }
+    }
+
+    &__inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 34px 0;
+
+      @include responsive767 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+        padding: 32px 0;
+      }
+    }
+
+    &__links {
+      text-align: left;
+
+      @include responsive767 {
+        text-align: center;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+
+      @include responsive767 {
+        align-items: center;
+        gap: 6px;
+      }
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration 0.3s;
+
+    &:hover {
+      text-decoration-color: $colorWhite;
+    }
+  }
+}
+
+.copyRight {
+  text-align: center;
+  padding: 20px 0;
+
+  @include responsive767 {
+    padding: 18px 0;
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @include responsive1439 {
+    gap: 8px;
+  }
+
+  li {
+  }
+
+  a {
+    border: solid 1px $colorWhite;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+
+    @include responsive1439 {
+      width: 24px;
+      height: 24px;
+
+      svg {
+        width: 12px;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.develop {
+  display: flex;
+  align-content: flex-end;
+  gap: 8px;
+}
