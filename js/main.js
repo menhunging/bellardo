@@ -246,6 +246,30 @@ $(document).ready(function () {
     });
   }
 
+  if ($(".portfolio-slider").length > 0) {
+    const swiper = new Swiper(".portfolio-slider", {
+      slidesPerView: 1,
+      spaceBetween: 32,
+      watchSlidesProgress: true,
+      loop: false,
+      initialSlide: 2,
+      centeredSlides: true,
+      navigation: {
+        prevEl: ".swiperBtnPrev",
+        nextEl: ".swiperBtnNext",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.1,
+          spaceBetween: 16,
+        },
+        1280: {
+          spaceBetween: 32,
+        },
+      },
+    });
+  }
+
   if ($(".tabs").length > 0) {
     $(".tabs").tabslet({
       mouseevent: "click",
@@ -291,6 +315,18 @@ $(document).ready(function () {
         showMaskOnFocus: true,
         clearIncomplete: true,
       });
+    });
+  }
+
+  if ($(".vacancy-list").length > 0) {
+    $(".vacancy-head").on("click", function () {
+      $(this).toggleClass("opened");
+
+      $(this)
+        .parents(".vacancy-item")
+        .find(".vacancy-body")
+        .stop()
+        .slideToggle();
     });
   }
 

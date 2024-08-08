@@ -2576,3 +2576,1459 @@
     }
   }
 }
+
+.portfolio {
+  padding-top: 0;
+  background-color: $colorGray;
+
+  @include responsive767 {
+    padding-bottom: 32px;
+  }
+
+  &-head {
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+
+      @include responsive767 {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      width: calc(50% + 207px);
+
+      @include responsive1279 {
+        width: 50%;
+      }
+
+      @include responsive767 {
+        width: 100%;
+        gap: 16px;
+      }
+    }
+
+    li {
+      width: 50%;
+    }
+
+    a {
+      padding: 27px;
+      white-space: nowrap;
+      position: relative;
+      width: 100%;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+
+      @include before {
+        width: 100%;
+        height: 1px;
+        top: 100%;
+        left: 0;
+        background-color: $colorBlack;
+        opacity: 0;
+      }
+
+      @include responsive1279 {
+        padding: 15px;
+      }
+
+      @include responsive389 {
+        padding: 5px;
+        font-size: 10px;
+      }
+
+      &.active {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &-body {
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 60px;
+    gap: 60px 32px;
+
+    @include responsive1279 {
+      gap: 32px 16px;
+      margin-top: 32px;
+    }
+
+    @include responsive767 {
+      grid-template-columns: 1fr;
+      margin-top: 16px;
+    }
+  }
+
+  &-item {
+    padding: 30px;
+    background-color: $colorWhite;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include responsive1279 {
+      padding: 16px;
+      gap: 10px;
+    }
+
+    &__name {
+      text-align: left;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 28px;
+
+      @include responsive1279 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .picture {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 357px;
+    @include invisLink;
+
+    @include responsive1279 {
+      height: 190px;
+    }
+
+    @include responsive1023 {
+      height: auto;
+      padding-top: calc(240 / 320 * 100%);
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .linkSite {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-indent: initial;
+      opacity: 0;
+      background-color: rgba(27, 25, 34, 0.7);
+      transition: all 0.3s;
+      text-indent: initial;
+      text-decoration: none;
+
+      &:hover {
+        &::after {
+          transform: initial;
+        }
+      }
+    }
+
+    &:hover {
+      .linkSite {
+        opacity: 1;
+      }
+    }
+  }
+
+  a:not(.linkSite) {
+    @include text-decoration-hover($colorBlack);
+  }
+}
+
+.pagination {
+  position: relative;
+  margin-top: 60px;
+
+  @include responsive1279 {
+    margin-top: 32px;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include responsive1279 {
+      gap: 16px;
+    }
+  }
+
+  li {
+  }
+
+  a {
+    opacity: 0.4;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  &__prev {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='101' height='8' viewBox='0 0 101 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M100.354 4.35355C100.549 4.15829 100.549 3.84171 100.354 3.64645L97.1716 0.464466C96.9763 0.269204 96.6597 0.269204 96.4645 0.464466C96.2692 0.659728 96.2692 0.976311 96.4645 1.17157L99.2929 4L96.4645 6.82843C96.2692 7.02369 96.2692 7.34027 96.4645 7.53553C96.6597 7.7308 96.9763 7.7308 97.1716 7.53553L100.354 4.35355ZM0 4.5H100V3.5H0V4.5Z' fill='%231B1922'/%3e%3c/svg%3e ");
+    transform: scale(-1, 1);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 20px;
+
+    @include responsive1279 {
+      width: 51px;
+      height: 14px;
+    }
+  }
+
+  &__next {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='101' height='8' viewBox='0 0 101 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M100.354 4.35355C100.549 4.15829 100.549 3.84171 100.354 3.64645L97.1716 0.464466C96.9763 0.269204 96.6597 0.269204 96.4645 0.464466C96.2692 0.659728 96.2692 0.976311 96.4645 1.17157L99.2929 4L96.4645 6.82843C96.2692 7.02369 96.2692 7.34027 96.4645 7.53553C96.6597 7.7308 96.9763 7.7308 97.1716 7.53553L100.354 4.35355ZM0 4.5H100V3.5H0V4.5Z' fill='%231B1922'/%3e%3c/svg%3e ");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 20px;
+
+    @include responsive1279 {
+      width: 51px;
+      height: 14px;
+    }
+  }
+}
+
+.portfolio-article {
+  padding-top: 0;
+  font-size: 22px;
+  line-height: 28px;
+
+  @include responsive1279 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .breadcrumbs {
+  }
+
+  .caption {
+    @include responsive767 {
+      font-size: 38px;
+    }
+  }
+
+  &-head {
+    &__inner {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+
+      @include responsive767 {
+        gap: 16px;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  &-bodyWrapper {
+  }
+
+  &-body {
+    padding: 60px 0;
+
+    @include responsive1279 {
+      padding: 32px 0;
+    }
+
+    @include responsive767 {
+      padding: 16px 0;
+    }
+
+    &:nth-child(2n) {
+      background-color: $colorGray;
+    }
+  }
+
+  &__back {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7 13L1 7L7 1' stroke='%231B1922' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 6px;
+    height: 12px;
+    min-width: 6px;
+
+    @include responsive767 {
+      transform: translateY(5px);
+    }
+  }
+}
+
+.portfolio-text {
+  display: flex;
+  gap: 33px;
+
+  @include responsive767 {
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+
+  @include responsive1279 {
+    gap: 20px;
+  }
+
+  &__text {
+    max-width: 305px;
+    width: 100%;
+
+    @include responsive1279 {
+      max-width: 262px;
+    }
+
+    @include responsive767 {
+      flex-direction: column;
+      max-width: 100%;
+    }
+  }
+
+  &__info {
+    margin-left: auto;
+    max-width: 978px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include responsive1279 {
+      gap: 16px;
+      max-width: 542px;
+    }
+
+    @include responsive767 {
+      max-width: 100%;
+    }
+  }
+
+  .picture {
+    width: 100%;
+    height: 737px;
+
+    @include responsive1279 {
+      width: 542px;
+      height: 407px;
+    }
+
+    @include responsive767 {
+      width: 100%;
+      height: auto;
+      padding-top: calc(268 / 360 * 100%);
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.portfolio-media {
+  padding: 60px 0;
+  position: relative;
+
+  @include responsive1279 {
+    padding: 32px 0;
+  }
+
+  @include responsive767 {
+    padding: 16px 0;
+  }
+}
+
+.portfolio-slider {
+  width: 642px;
+  height: 856px;
+  margin: 0 auto;
+  overflow: visible;
+  position: static;
+
+  @include responsive1279 {
+    width: 403px;
+    height: 538px;
+  }
+
+  @include responsive767 {
+    width: 100%;
+    height: auto;
+    min-height: 405px;
+  }
+
+  .swiper-slide {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    opacity: 0.4;
+    transition: all 0.3s;
+
+    @include responsive767 {
+      margin-top: auto;
+    }
+
+    .picture {
+      position: relative;
+      height: 405px;
+      width: 305px;
+      transition: all 0.3s;
+      transform: translateX(337px);
+      @include invisLink;
+
+      @include responsive1279 {
+        width: 193px;
+        height: 257px;
+        transform: translateX(210px);
+      }
+
+      @include responsive767 {
+        transform: translateX(0);
+        transition: all 0s;
+      }
+
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .swiper-slide-active {
+    opacity: 1;
+
+    .picture {
+      width: 100%;
+      height: 856px;
+      transform: translateX(0);
+
+      @include responsive1279 {
+        height: 538px;
+      }
+
+      @include responsive767 {
+        height: auto;
+        padding-top: calc(426 / 320 * 100%);
+      }
+    }
+  }
+
+  .swiper-slide-prev {
+    .picture {
+      transform: translateX(0);
+    }
+  }
+
+  .swiper-slide-next {
+    align-items: flex-start;
+
+    .picture {
+      transform: translateX(0);
+    }
+
+    & + .swiper-slide {
+      align-items: flex-start;
+
+      .picture {
+        transform: translateX(-337px);
+
+        @include responsive1279 {
+          transform: translateX(-210px);
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+
+    @include responsive767 {
+      display: none;
+    }
+
+    .swiperBtnPrev {
+      position: relative;
+      margin: 0;
+      left: 0;
+      top: 0;
+      width: 42px;
+      height: 84px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='45' height='86' viewBox='0 0 45 86' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M44 85L2 43L44 1' stroke='%231B1922' stroke-width='2' stroke-linecap='round'/%3e%3c/svg%3e ");
+
+      @include responsive1279 {
+        width: 27px;
+        height: 54px;
+      }
+    }
+
+    .swiperBtnNext {
+      position: relative;
+      margin: 0;
+      left: 0;
+      top: 0;
+      width: 42px;
+      height: 84px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='45' height='86' viewBox='0 0 45 86' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L43 43L1 85' stroke='%231B1922' stroke-width='2' stroke-linecap='round'/%3e%3c/svg%3e ");
+
+      @include responsive1279 {
+        width: 27px;
+        height: 54px;
+      }
+    }
+  }
+}
+
+.contacts {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  &-info {
+    padding-bottom: 80px;
+
+    @include responsive1279 {
+      padding-bottom: 32px;
+    }
+  }
+
+  .location__body {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .location__left {
+    width: 868px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 50% 300px;
+    justify-content: space-between;
+
+    @include responsive1279 {
+      width: 543px;
+      grid-template-columns: 50% 190px;
+    }
+
+    @include responsive767 {
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+    }
+
+    @include responsive389 {
+      grid-template-columns: 1fr;
+    }
+
+    a {
+      @include text-decoration-hover($colorWhite);
+    }
+  }
+
+  .location__right {
+    width: 982px;
+    height: 468px;
+    margin-left: auto;
+    flex: initial;
+
+    @include responsive1439 {
+      height: 350px;
+    }
+
+    @include responsive1279 {
+      height: 250px;
+      width: 545px;
+    }
+
+    @include responsive767 {
+      width: 100%;
+      height: 268px;
+    }
+  }
+
+  .location__col {
+    height: 100%;
+
+    &:first-child {
+      grid-row: 1/4;
+
+      @include responsive767 {
+        grid-row: inherit;
+        grid-column: 1/3;
+      }
+
+      @include responsive389 {
+        grid-column: initial;
+      }
+    }
+
+    &:last-child {
+      @include responsive767 {
+        grid-column: 2/3;
+      }
+
+      @include responsive389 {
+        grid-column: initial;
+      }
+    }
+
+    .linkSite {
+      margin-top: auto;
+    }
+  }
+}
+
+.ask-form {
+  background-color: $colorGray;
+  padding: 80px 0;
+
+  @include responsive1279 {
+    padding: 32px 0;
+  }
+
+  @include responsive767 {
+    padding: 16px 0;
+  }
+
+  .input-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 206px;
+    gap: 32px;
+    margin-top: 32px;
+
+    @include responsive1279 {
+      grid-template-columns: 1fr 1fr 182px;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    @include responsive767 {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .input-item {
+    &:nth-child(1) {
+      grid-column: 1/2;
+    }
+    &:nth-child(2) {
+      grid-column: 2/3;
+    }
+    &:nth-child(3) {
+      grid-column: 1/3;
+    }
+
+    textarea,
+    input {
+      border-color: $colorBlack;
+
+      &::placeholder {
+        color: $colorBlack-a4;
+      }
+    }
+  }
+
+  .btn {
+    grid-column: 3/4;
+    grid-row: 1/3;
+  }
+
+  .checkblock {
+    grid-column: 1/4;
+  }
+}
+
+.vacancy {
+  padding-top: 0;
+
+  &-list {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include responsive1279 {
+      padding: 32px 0;
+    }
+
+    @include responsive767 {
+      padding: 16px 0;
+      gap: 16px;
+    }
+  }
+
+  &-item {
+  }
+
+  &-head {
+    background-color: $colorGray;
+    padding: 16px 0;
+    cursor: pointer;
+
+    &.opened {
+      .caption::before {
+        transform: scale(1, -1);
+      }
+    }
+
+    .caption {
+      position: relative;
+
+      @include before {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 0.999999L7 7L13 1' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 12px;
+        height: 6px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &-body {
+    display: none;
+  }
+
+  &-body__content {
+    padding: 32px 0;
+
+    @include responsive1279 {
+      padding: 16px 0 0;
+    }
+  }
+
+  &__row {
+    & + .vacancy__row {
+      margin-top: 60px;
+
+      @include responsive1279 {
+        margin-top: 32px;
+      }
+
+      @include responsive767 {
+        margin-top: 16px;
+      }
+    }
+
+    &:nth-child(2n) {
+      background-color: $colorGray;
+      padding-top: 60px;
+      padding-bottom: 60px;
+
+      @include responsive1279 {
+        padding-top: 32px;
+        padding-bottom: 32px;
+      }
+
+      @include responsive767 {
+        padding: 16px 0;
+      }
+
+      .vacancy__name {
+        background-color: $colorWhite;
+      }
+    }
+  }
+
+  &__name {
+    width: 100%;
+    max-width: 870px;
+    margin-left: auto;
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 28px;
+    padding: 16px 32px;
+    background-color: $colorGray;
+
+    @include responsive1279 {
+      max-width: 542px;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 8px 16px;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    max-width: 870px;
+    margin-left: auto;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-top: 32px;
+
+    @include responsive1279 {
+      max-width: 542px;
+      font-size: 16px;
+      line-height: 20px;
+      margin-top: 16px;
+    }
+
+    li {
+      padding-left: 32px;
+      position: relative;
+
+      @include responsive1279 {
+        padding-left: 21px;
+      }
+
+      & + li {
+        margin-top: 16px;
+
+        @include responsive1279 {
+          margin-top: 8px;
+        }
+      }
+
+      @include before {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6.5 11L9.5 14L15.5 8M21 11C21 16.5228 16.5228 21 11 21C5.47715 21 1 16.5228 1 11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11Z' stroke='%231B1922' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        left: 0;
+        top: 4px;
+
+        @include responsive1279 {
+          width: 13px;
+          height: 13px;
+        }
+      }
+    }
+  }
+
+  &-form {
+  }
+
+  &-form__form {
+  }
+
+  .input-list {
+  }
+
+  .input-item {
+  }
+
+  .phone-input {
+  }
+
+  .fileLoad {
+  }
+
+  .btn {
+  }
+}
+
+.vacancy-conditions {
+  padding: 60px 0;
+
+  @include responsive1279 {
+    padding: 32px 0;
+  }
+
+  @include responsive767 {
+    padding: 16px 0;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+
+    @include responsive1279 {
+      gap: 16px;
+    }
+
+    @include responsive767 {
+      gap: 8px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    background-color: #1b1922;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $colorWhite;
+    width: 100%;
+    height: 132px;
+    text-align: left;
+    padding: 24px 32px;
+
+    @include responsive1279 {
+      font-size: 16px;
+      line-height: 20px;
+      padding: 16px;
+      height: auto;
+      min-height: 72px;
+    }
+
+    @include responsive767 {
+      min-height: 30px;
+      justify-content: flex-start;
+    }
+
+    &:first-child {
+      background-color: transparent;
+      color: $colorBlack;
+      align-items: flex-start;
+      justify-content: flex-start;
+      font-weight: 600;
+      padding: 0;
+    }
+  }
+}
+
+.vacancy-form {
+  background-color: $colorGray;
+  padding: 60px 0;
+
+  @include responsive1279 {
+    padding: 32px 0;
+  }
+
+  @include responsive767 {
+    padding: 16px 0;
+  }
+
+  &__form {
+  }
+
+  .input-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: 32px;
+
+    @include responsive1279 {
+      gap: 16px;
+      margin-top: 16px;
+    }
+  }
+
+  .input-item {
+    width: calc(100% / 3 - 22px);
+
+    @include responsive767 {
+      width: 100%;
+    }
+
+    input {
+      border-color: $colorBlack;
+      color: $colorBlack;
+
+      &::placeholder {
+        color: $colorBlack-a4;
+      }
+    }
+  }
+
+  .fileLoad {
+    width: calc(100% - 259px);
+
+    @include responsive767 {
+      width: 100%;
+    }
+  }
+
+  .btn {
+    max-width: 227px;
+    justify-content: center;
+    width: 100%;
+
+    @include responsive767 {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.partners {
+  padding: 0 0 60px;
+
+  @include responsive1279 {
+    padding-bottom: 32px;
+  }
+
+  &-head {
+    &__inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      @include responsive767 {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      p {
+        max-width: 640px;
+        width: 100%;
+
+        @include responsive1279 {
+          max-width: 400px;
+        }
+      }
+    }
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 60px;
+
+    @include responsive1279 {
+      margin-top: 32px;
+      gap: 16px;
+    }
+
+    @include responsive767 {
+      margin-top: 16px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include responsive389 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &-item {
+    width: 100%;
+    height: 288px;
+    background-color: $colorGray;
+    position: relative;
+
+    @include responsive1279 {
+      height: 153px;
+    }
+
+    .picture {
+      width: 100%;
+
+      @include responsive1279 {
+        width: 130px;
+      }
+    }
+
+    .linkSite {
+    }
+
+    &:hover {
+      .partners-item__front {
+        opacity: 0;
+      }
+
+      .partners-item__back {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-item__front {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+
+    @include responsive1279 {
+      padding: 8px;
+    }
+  }
+
+  &-item__back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    background-color: $colorBlack;
+    color: $colorWhite;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+
+    @include responsive1279 {
+      padding: 8px;
+    }
+  }
+}
+
+.smi-page {
+  padding: 0 0 60px;
+
+  @include responsive1279 {
+    padding-bottom: 32px;
+  }
+
+  @include responsive767 {
+    padding-bottom: 32px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px 0;
+    margin-top: 60px;
+
+    @include responsive1279 {
+      margin-top: 32px;
+    }
+
+    @include responsive767 {
+      margin-top: 16px;
+    }
+
+    @include responsive767 {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 28px;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    @include invisLink;
+
+    @include responsive1279 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @include responsive389 {
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    span {
+      font-size: 16px;
+      line-height: 20px;
+
+      @include responsive1279 {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+
+    .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: solid 1px $colorBlack;
+      background-color: $colorWhite;
+      width: 120px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s;
+
+      @include responsive1279 {
+        width: 90px;
+      }
+
+      @include responsive767 {
+        width: 70px;
+      }
+
+      @include responsive389 {
+        width: 50px;
+      }
+
+      svg {
+        transition: all 0.3s;
+
+        path {
+          transition: all 0.3s;
+        }
+      }
+    }
+
+    &:hover {
+      .smi-page__info {
+        background-color: $colorBlack;
+        color: $colorWhite;
+      }
+
+      .icon {
+        background-color: $colorBlack;
+        border-left-color: $colorWhite;
+
+        svg {
+          path {
+            stroke: $colorWhite;
+          }
+        }
+      }
+    }
+  }
+
+  .picture {
+    position: relative;
+    display: block;
+    width: 192px;
+    height: 246px;
+
+    @include responsive1279 {
+      width: 125px;
+      height: 160px;
+    }
+
+    @include responsive389 {
+      width: 100px;
+      height: 140px;
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    min-height: 74px;
+    background-color: $colorGray;
+    position: relative;
+    transition: all 0.3s;
+    flex: 1;
+    padding-right: 120px;
+    word-break: break-all;
+
+    @include responsive1279 {
+      gap: 4px;
+      padding-right: 90px;
+      min-height: 50px;
+    }
+
+    @include responsive767 {
+      padding-right: 70px;
+    }
+
+    @include responsive389 {
+      padding-right: 50px;
+      font-size: 14px;
+    }
+  }
+}
+
+.reviews-page {
+  padding: 0 0 60px;
+
+  @include responsive1279 {
+    padding-bottom: 32px;
+  }
+
+  .breadcrumbs {
+  }
+
+  &-head {
+  }
+
+  &-head__inner {
+  }
+
+  &-body {
+  }
+
+  &__list {
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 60px 0 0;
+
+    @include responsive1279 {
+      padding-top: 32px;
+    }
+
+    @include responsive767 {
+      flex-direction: column !important;
+      gap: 8px;
+      padding-top: 16px;
+    }
+
+    & + .reviews-page__item {
+      border-top: solid 1px $colorBlack;
+    }
+
+    &:last-child {
+      border-bottom: solid 1px $colorBlack;
+    }
+
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__left {
+    background-color: $colorGray;
+    max-width: 528px;
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include responsive1279 {
+      max-width: 334px;
+      gap: 4px;
+    }
+
+    @include responsive767 {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  &__right {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    background-color: $colorGray;
+    width: 100%;
+    max-width: 760px;
+    padding: 32px;
+    position: relative;
+    padding-left: 104px;
+
+    @include responsive1279 {
+      max-width: 458px;
+      padding: 16px;
+      padding-left: 62px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include responsive767 {
+      max-width: 100%;
+      width: 100%;
+      padding: 16px 8px 16px 44px;
+    }
+
+    @include before {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='40' height='37' viewBox='0 0 40 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.80132 0L13.3775 2.61225C12.4062 3.8313 11.3907 5.57279 10.3311 7.83673C9.27152 10.1007 8.43267 12.5823 7.81457 15.2816C7.19647 17.981 7.01987 20.6803 7.28477 23.3796C7.90287 23.1184 8.47682 22.9442 9.00662 22.8571C9.53642 22.683 10.0662 22.5959 10.596 22.5959C12.362 22.5959 13.819 23.2054 14.9669 24.4245C16.1148 25.6435 16.6887 27.1673 16.6887 28.9959C16.6887 31.434 15.9823 33.3061 14.5695 34.6122C13.1567 35.9184 11.4349 36.5714 9.40397 36.5714C6.40177 36.5714 4.06181 35.4395 2.38411 33.1755C0.794702 30.8245 0 27.9946 0 24.6857C0 22.4218 0.397351 19.766 1.19205 16.7184C2.07506 13.5837 3.22296 10.4925 4.63576 7.4449C6.13687 4.39728 7.85872 1.91565 9.80132 0ZM33.1126 0L36.6887 2.61225C35.7174 3.8313 34.702 5.57279 33.6424 7.83673C32.5828 10.1007 31.7439 12.5823 31.1258 15.2816C30.5077 17.981 30.3311 20.6803 30.596 23.3796C31.2141 23.1184 31.7881 22.9442 32.3179 22.8571C32.8477 22.683 33.3775 22.5959 33.9073 22.5959C35.6733 22.5959 37.1302 23.2054 38.2781 24.4245C39.426 25.6435 40 27.1673 40 28.9959C40 31.434 39.2936 33.3061 37.8808 34.6122C36.468 35.9184 34.7461 36.5714 32.7152 36.5714C29.713 36.5714 27.3731 35.4395 25.6954 33.1755C24.106 30.8245 23.3113 27.9946 23.3113 24.6857C23.3113 22.4218 23.7086 19.766 24.5033 16.7184C25.3863 13.5837 26.5342 10.4925 27.947 7.4449C29.4481 4.39728 31.17 1.91565 33.1126 0Z' fill='black' fill-opacity='0.5'/%3e%3c/svg%3e ");
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 40px;
+      height: 36px;
+      left: 32px;
+      top: 32px;
+
+      @include responsive1279 {
+        width: 30px;
+        height: 27px;
+        left: 16px;
+        top: 16px;
+        background-size: contain;
+      }
+
+      @include responsive767 {
+        width: 24px;
+        height: 22px;
+        left: 8px;
+        top: 16px;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 28px;
+
+    @include responsive1279 {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &__dol {
+  }
+}

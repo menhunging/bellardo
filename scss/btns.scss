@@ -101,6 +101,31 @@
       color: $colorBlack;
     }
   }
+
+  &--borderDark {
+    background-color: transparent;
+    border: solid 1px $colorBlack;
+    color: $colorBlack;
+    text-align: center;
+    justify-content: center;
+
+    &.btn--arrow {
+      &::after {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M19 13V5H11' stroke='%231B1922' stroke-linecap='round'/%3e%3cpath d='M19 5L5 19' stroke='%231B1922' stroke-linecap='round'/%3e%3c/svg%3e ");
+      }
+
+      &:hover {
+        &::after {
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M19 13V5H11' stroke='white' stroke-linecap='round'/%3e%3cpath d='M19 5L5 19' stroke='white' stroke-linecap='round'/%3e%3c/svg%3e ");
+        }
+      }
+    }
+
+    &:hover {
+      background-color: $colorBlack;
+      color: $colorWhite;
+    }
+  }
 }
 
 .btn-close {
