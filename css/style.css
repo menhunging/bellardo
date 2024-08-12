@@ -1628,7 +1628,9 @@ h4,
 }
 @media (max-width: 1599px) {
   .grettings-content {
-    min-height: 800px;
+    min-height: 500px;
+    max-height: 800px;
+    height: calc(100vh - 100px);
   }
 }
 @media (max-width: 1279px) {
@@ -2400,7 +2402,6 @@ h4,
 .projects-tabs__slider .swiper-slide {
   background-color: rgb(255, 255, 255);
   padding: 30px;
-  text-align: center;
 }
 @media (max-width: 1279px) {
   .projects-tabs__slider .swiper-slide {
@@ -2473,7 +2474,7 @@ h4,
   font-size: 22px;
   font-weight: 600;
   line-height: 28px;
-  text-align: center;
+  text-align: left;
   display: block;
   margin-bottom: 20px;
 }
@@ -2752,6 +2753,7 @@ h4,
   gap: 16px;
   padding: 24px 32px;
   border-top: solid 1px rgb(27, 25, 34);
+  transition: all 0.3s;
 }
 @media (max-width: 1279px) {
   .our-approach__item {
@@ -2764,9 +2766,18 @@ h4,
     padding-left: 52px;
   }
 }
-.our-approach__item:first-child {
+.our-approach__item svg {
+  transition: all 0.3s;
+}
+.our-approach__item svg path {
+  transition: all 0.3s;
+}
+.our-approach__item:hover {
   background-color: rgb(27, 25, 34);
   color: rgb(255, 255, 255);
+}
+.our-approach__item:hover svg path {
+  fill: rgb(255, 255, 255);
 }
 @media (max-width: 1279px) {
   .our-approach__icon {
@@ -2849,13 +2860,17 @@ h4,
   -o-transition: all 0.3s;
   transition: all 0.3s;
   position: absolute;
-  top: 50%;
+  top: 9px;
   left: 10px;
-  width: 3px;
-  height: 3px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   background-color: rgb(27, 25, 34);
-  transform: translate(-50%, -50%);
+}
+@media (max-width: 1279px) {
+  .how-start__item li::before {
+    top: 5px;
+  }
 }
 .how-start__tag {
   color: rgba(27, 25, 34, 0.4);

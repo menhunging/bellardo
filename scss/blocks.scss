@@ -20,7 +20,9 @@
     z-index: 3;
 
     @include responsive1599 {
-      min-height: 800px;
+      min-height: 500px;
+      max-height: 800px;
+      height: calc(100vh - 100px);
     }
 
     @include responsive1279 {
@@ -765,7 +767,6 @@
     .swiper-slide {
       background-color: $colorWhite;
       padding: 30px;
-      text-align: center;
 
       @include responsive1279 {
         padding: 16px;
@@ -831,7 +832,7 @@
     font-size: 22px;
     font-weight: 600;
     line-height: 28px;
-    text-align: center;
+    text-align: left;
     display: block;
     margin-bottom: 20px;
 
@@ -1124,6 +1125,7 @@
     gap: 16px;
     padding: 24px 32px;
     border-top: solid 1px $colorBlack;
+    transition: all 0.3s;
 
     @include responsive1279 {
       padding: 13px 17px;
@@ -1134,9 +1136,23 @@
       padding-left: 52px;
     }
 
-    &:first-child {
+    svg {
+      transition: all 0.3s;
+
+      path {
+        transition: all 0.3s;
+      }
+    }
+
+    &:hover {
       background-color: $colorBlack;
       color: $colorWhite;
+
+      svg {
+        path {
+          fill: $colorWhite;
+        }
+      }
     }
   }
 
@@ -1219,13 +1235,16 @@
 
       @include before {
         position: absolute;
-        top: 50%;
+        top: 9px;
         left: 10px;
-        width: 3px;
-        height: 3px;
+        width: 4px;
+        height: 4px;
         border-radius: 50%;
         background-color: $colorBlack;
-        transform: translate(-50%, -50%);
+
+        @include responsive1279 {
+          top: 5px;
+        }
       }
     }
   }
