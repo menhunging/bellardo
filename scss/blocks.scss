@@ -4655,6 +4655,7 @@
     position: absolute;
     background-color: $colorBlack;
     transition: all 0.3s;
+    cursor: pointer;
 
     @include responsive1279 {
       width: 67px;

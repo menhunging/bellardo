@@ -6433,6 +6433,7 @@ h4,
   position: absolute;
   background-color: rgb(27, 25, 34);
   transition: all 0.3s;
+  cursor: pointer;
 }
 @media (max-width: 1279px) {
   .steps-projects .step {

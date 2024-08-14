@@ -326,7 +326,7 @@ $(document).ready(function () {
     const swiper = new Swiper(".steps-slider", {
       slidesPerView: 1,
       spaceBetween: 0,
-      autoHeight: true,
+      // autoHeight: true,
       watchSlidesProgress: true,
       loop: false,
       // navigation: {
