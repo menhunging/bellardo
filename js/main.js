@@ -349,12 +349,14 @@ $(document).ready(function () {
         $("body").removeClass("modal-open");
       },
     });
+
     $("[data-modal]").map(function () {
       $(this).click((e) => {
         e.preventDefault();
         $("body").addClass("modal-open");
       });
     });
+
     $("[data-micromodal-close]").map(function () {
       $(this).click((e) => {
         e.preventDefault();

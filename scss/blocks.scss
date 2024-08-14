@@ -1410,6 +1410,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 3;
 
     .linkSite {
       white-space: nowrap;
@@ -2642,7 +2644,7 @@
       width: 100%;
       display: block;
       text-align: center;
-      text-decoration: none;
+      text-decoration: none !important;
 
       @include before {
         width: 100%;
@@ -2855,6 +2857,10 @@
     @include responsive767 {
       font-size: 38px;
     }
+
+    @include responsive479 {
+      font-size: 28px;
+    }
   }
 
   &-head {
@@ -2921,6 +2927,10 @@
     max-width: 305px;
     width: 100%;
 
+    @include responsive1439 {
+      max-width: 30%;
+    }
+
     @include responsive1279 {
       max-width: 262px;
     }
@@ -2952,6 +2962,12 @@
   .picture {
     width: 100%;
     height: 737px;
+
+    @include responsive1439 {
+      height: 430px;
+      width: 50%;
+      margin-left: auto;
+    }
 
     @include responsive1279 {
       width: 542px;
@@ -2995,6 +3011,10 @@
   overflow: visible;
   position: static;
 
+  @include responsive1439 {
+    height: 550px;
+  }
+
   @include responsive1279 {
     width: 403px;
     height: 538px;
@@ -3027,6 +3047,9 @@
       transform: translateX(337px);
       @include invisLink;
 
+      @include responsive1439 {
+      }
+
       @include responsive1279 {
         width: 193px;
         height: 257px;
@@ -3056,6 +3079,10 @@
       width: 100%;
       height: 856px;
       transform: translateX(0);
+
+      @include responsive1439 {
+        height: 550px;
+      }
 
       @include responsive1279 {
         height: 538px;

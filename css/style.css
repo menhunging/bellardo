@@ -212,7 +212,7 @@ body {
     line-height: 14px;
   }
 }
-body.hidden {
+body.modal-open, body.hidden {
   overflow: hidden;
 }
 body.inner-page .main {
@@ -474,11 +474,20 @@ picture img {
   padding: 0;
   margin: 0;
   width: 100%;
-  max-width: 100%;
   padding: 50px 0;
-  max-width: 580px;
+  max-width: 1200px;
   position: relative;
   margin: auto;
+}
+@media (max-width: 1279px) {
+  .modal__container {
+    max-width: 768px;
+  }
+}
+@media (max-width: 767px) {
+  .modal__container {
+    max-width: calc(100% - 20px);
+  }
 }
 
 .modal__content {
@@ -486,6 +495,17 @@ picture img {
   margin: 0;
   background-color: rgb(255, 255, 255);
   position: relative;
+  padding: 80px 100px;
+}
+@media (max-width: 1279px) {
+  .modal__content {
+    padding: 40px 50px;
+  }
+}
+@media (max-width: 767px) {
+  .modal__content {
+    padding: 20px;
+  }
 }
 .modal__content .link {
   font-size: 14px;
@@ -513,8 +533,8 @@ picture img {
   -o-transition: all 0.3s;
   transition: all 0.3s;
   position: absolute;
-  right: 45px;
-  top: 45px;
+  right: 100px;
+  top: 80px;
   display: flex;
   z-index: 10;
   font-weight: 400;
@@ -523,6 +543,18 @@ picture img {
   color: #292929;
   align-items: center;
   gap: 11px;
+}
+@media (max-width: 1279px) {
+  .modal__close {
+    right: 50px;
+    top: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .modal__close {
+    right: 20px;
+    top: 20px;
+  }
 }
 .modal__close svg {
   pointer-events: none;
@@ -936,6 +968,55 @@ section {
   opacity: 0.4;
   padding: 17px;
   display: block;
+}
+
+.modal-custom .input-form {
+  display: grid;
+  grid-template-columns: 1fr 259px;
+  gap: 32px;
+  margin-top: 32px;
+}
+@media (max-width: 1279px) {
+  .modal-custom .input-form {
+    gap: 24px;
+    margin-top: 24px;
+    grid-template-columns: 1fr 200px;
+  }
+}
+@media (max-width: 767px) {
+  .modal-custom .input-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+  }
+}
+.modal-custom .btn {
+  grid-row: 1/3;
+  grid-column: 2/3;
+  display: flex;
+  justify-content: center;
+  height: 74px;
+  margin-top: auto;
+}
+@media (max-width: 1279px) {
+  .modal-custom .btn {
+    height: 63px;
+  }
+}
+@media (max-width: 767px) {
+  .modal-custom .btn {
+    height: auto;
+  }
+}
+.modal-custom .input-item input {
+  border-color: rgb(27, 25, 34);
+  color: rgb(27, 25, 34);
+  height: 36px;
+  width: 100%;
+}
+.modal-custom .input-item input::placeholder {
+  color: rgba(27, 25, 34, 0.4);
 }
 
 @media (min-width: 1200px) {
@@ -3037,6 +3118,8 @@ h4,
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  z-index: 3;
 }
 .reviews-main__head .linkSite {
   white-space: nowrap;
@@ -4273,7 +4356,7 @@ h4,
   width: 100%;
   display: block;
   text-align: center;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .portfolio-head a::before {
   content: "";
@@ -4493,6 +4576,11 @@ h4,
     font-size: 38px;
   }
 }
+@media (max-width: 479px) {
+  .portfolio-article .caption {
+    font-size: 28px;
+  }
+}
 .portfolio-article-head__inner {
   display: flex;
   align-items: center;
@@ -4554,6 +4642,11 @@ h4,
   max-width: 305px;
   width: 100%;
 }
+@media (max-width: 1439px) {
+  .portfolio-text__text {
+    max-width: 30%;
+  }
+}
 @media (max-width: 1279px) {
   .portfolio-text__text {
     max-width: 262px;
@@ -4587,6 +4680,13 @@ h4,
 .portfolio-text .picture {
   width: 100%;
   height: 737px;
+}
+@media (max-width: 1439px) {
+  .portfolio-text .picture {
+    height: 430px;
+    width: 50%;
+    margin-left: auto;
+  }
 }
 @media (max-width: 1279px) {
   .portfolio-text .picture {
@@ -4631,6 +4731,11 @@ h4,
   margin: 0 auto;
   overflow: visible;
   position: static;
+}
+@media (max-width: 1439px) {
+  .portfolio-slider {
+    height: 550px;
+  }
 }
 @media (max-width: 1279px) {
   .portfolio-slider {
@@ -4708,6 +4813,11 @@ h4,
   width: 100%;
   height: 856px;
   transform: translateX(0);
+}
+@media (max-width: 1439px) {
+  .portfolio-slider .swiper-slide-active .picture {
+    height: 550px;
+  }
 }
 @media (max-width: 1279px) {
   .portfolio-slider .swiper-slide-active .picture {
