@@ -810,6 +810,60 @@ section {
   }
 }
 
+.twentytwenty-horizontal .twentytwenty-handle:before,
+.twentytwenty-horizontal .twentytwenty-handle:after {
+  width: 2px;
+}
+
+.twentytwenty-horizontal .twentytwenty-handle:before {
+  margin-bottom: 35px;
+}
+
+.twentytwenty-horizontal .twentytwenty-handle:after {
+  margin-top: 35px;
+}
+
+.twentytwenty-handle {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='10' viewBox='0 0 20 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M19.8996 4.99995L14.9436 9.94495L13.5346 8.53695L17.0696 4.99995L13.5346 1.46495L14.9486 0.0499516L19.8996 4.99995ZM6.46461 8.53695L5.04961 9.94995L0.0996094 4.99995L5.05461 0.0559511L6.46261 1.46395L2.92861 4.99995L6.46361 8.53595L6.46461 8.53695Z' fill='black'/%3e%3c/svg%3e ");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: $colorWhite;
+  width: 64px;
+  height: 64px;
+  margin-left: -32px;
+  margin-top: -32px;
+
+  @include responsive1279 {
+    width: 34px;
+    height: 34px;
+    margin-left: -12px;
+    margin-top: -12px;
+    background-size: 10px;
+  }
+
+  &::before,
+  &::after {
+    background-color: $colorBlack !important;
+    z-index: -1;
+  }
+}
+
+.twentytwenty-horizontal .twentytwenty-handle:after {
+  @include responsive1279 {
+    margin-top: 20px;
+  }
+}
+.twentytwenty-horizontal .twentytwenty-handle:before {
+  @include responsive1279 {
+    margin-bottom: 20px;
+  }
+}
+
+.twentytwenty-left-arrow,
+.twentytwenty-right-arrow {
+  display: none;
+}
+
 @media (min-width: 1200px) {
   body.modal-open {
     overflow: hidden;

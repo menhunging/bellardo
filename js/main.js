@@ -105,6 +105,10 @@ $(document).ready(function () {
       spaceBetween: 32,
       watchSlidesProgress: true,
       loop: false,
+      navigation: {
+        prevEl: ".projects-tabs__tabs .swiperBtnPrev",
+        nextEl: ".projects-tabs__tabs .swiperBtnNext",
+      },
       breakpoints: {
         0: {
           slidesPerView: 1.2,
@@ -267,6 +271,86 @@ $(document).ready(function () {
           spaceBetween: 32,
         },
       },
+    });
+  }
+
+  if ($(".primer-projects__slider").length > 0) {
+    const swiper = new Swiper(".primer-projects__slider", {
+      slidesPerView: 2,
+      spaceBetween: 32,
+      allowTouchMove: false,
+      watchSlidesProgress: true,
+      loop: false,
+      // navigation: {
+      //   prevEl: ".swiperBtnPrev",
+      //   nextEl: ".swiperBtnNext",
+      // },
+      on: {
+        init() {
+          $(".primer-projects__slider .swiper-slide").on("click", function () {
+            swiper.slideTo($(this).index());
+          });
+        },
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.1,
+          spaceBetween: 16,
+        },
+        640: {
+          slidesPerView: 1.5,
+          spaceBetween: 16,
+        },
+        768: {
+          slidesPerView: 2.3,
+          spaceBetween: 16,
+        },
+        1024: {
+          spaceBetween: 16,
+        },
+        1280: {
+          spaceBetween: 32,
+        },
+      },
+    });
+
+    $(".beforeAfter").twentytwenty({
+      no_overlay: true, // Не показывать наложение с «до» и «после»
+      move_slider_on_hover: false, // Перемещать ползунок при наведении мыши?
+      move_with_handle_only: true, // Разрешить пользователю провести пальцем в любом месте изображения, чтобы управлять движением ползунка.
+      click_to_move: true, // Разрешить пользователю щелкнуть (или коснуться) в любом месте изображения, чтобы переместить ползунок в
+    });
+  }
+
+  if ($(".steps-slider").length > 0) {
+    const swiper = new Swiper(".steps-slider", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      autoHeight: true,
+      watchSlidesProgress: true,
+      loop: false,
+      // navigation: {
+      //   prevEl: ".swiperBtnPrev",
+      //   nextEl: ".swiperBtnNext",
+      // },
+    });
+
+    swiper.on("slideChange", function () {
+      $(".steps-projects__left .step").removeClass("active");
+      $(".steps-projects__left .step")
+        .eq(swiper.activeIndex)
+        .addClass("active");
+    });
+
+    $(".steps-slider .btn").on("click", function (event) {
+      event.preventDefault();
+      swiper.slideNext();
+    });
+
+    $(".steps-projects__left .step").on("click", function () {
+      $(".steps-projects__left .step").removeClass("active");
+      $(this).addClass("active");
+      swiper.slideTo($(this).index());
     });
   }
 
