@@ -4881,3 +4881,375 @@
     }
   }
 }
+
+.consul-section {
+  background-color: #f8f7f6;
+
+  &__inner {
+    display: flex;
+
+    @include responsive1023 {
+      flex-direction: column;
+    }
+  }
+
+  &__form {
+    width: 724px;
+    display: grid;
+    grid-template-columns: 1fr 259px;
+    gap: 32px;
+
+    @include responsive1279 {
+      width: 405px;
+      grid-template-columns: 1fr 139px;
+      gap: 18px;
+    }
+
+    @include responsive1023 {
+      width: 100%;
+      margin-top: 16px;
+    }
+  }
+
+  .input-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+
+    label {
+      position: absolute;
+      top: 20px;
+      left: 0;
+
+      @include responsive1279 {
+        top: -5px;
+      }
+    }
+
+    input {
+      color: $colorBlack;
+      border-color: $colorBlack;
+      height: 59px;
+
+      @include responsive1279 {
+        height: 40px;
+      }
+
+      &::placeholder {
+        color: $colorBlack;
+      }
+    }
+  }
+
+  .caption {
+    width: calc(100% - 724px);
+
+    @include responsive1279 {
+      width: calc(100% - 405px);
+    }
+
+    @include responsive1023 {
+      width: 100%;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  .btn {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    white-space: nowrap;
+
+    @include responsive1279 {
+      padding: 16px;
+    }
+
+    @include responsive767 {
+      font-size: 9px;
+      line-height: 10px;
+      gap: 2px;
+    }
+
+    &::after {
+      min-width: 24px;
+
+      @include responsive1279 {
+        min-width: 20px;
+      }
+    }
+  }
+}
+
+.prices-section {
+  .caption {
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 32px;
+
+    @include responsive1279 {
+      margin-top: 16px;
+    }
+
+    @include responsive767 {
+      grid-template-columns: repeat(4, 330px);
+      overflow: auto;
+      left: -16px;
+      position: relative;
+      width: calc(100% + 32px);
+      padding: 0 16px;
+    }
+
+    @include responsive389 {
+      grid-template-columns: repeat(4, 280px);
+    }
+  }
+
+  &__item {
+    border: solid 1px $colorBlack;
+    color: $colorBlack-a6;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $colorBlack;
+      color: $colorWhite;
+
+      .prices-section__name {
+        color: $colorWhite;
+      }
+
+      .prices-section__content {
+        border-top: solid 1px $colorWhite;
+      }
+
+      .btn {
+        border-color: $colorWhite;
+
+        &:hover {
+          background-color: $colorWhite;
+        }
+      }
+    }
+  }
+
+  &__name {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 34px;
+    text-align: center;
+    font-family: $fontLora;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    min-height: 100px;
+    color: $colorBlack;
+
+    @include responsive1279 {
+      font-size: 18px;
+      line-height: 20px;
+      min-height: 72px;
+    }
+  }
+
+  &__content {
+    padding: 32px 24px;
+    border-top: solid 1px $colorBlack;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include responsive1279 {
+      padding: 16px;
+      gap: 8px;
+    }
+
+    @include responsive1023 {
+      padding: 8px;
+    }
+
+    @include responsive767 {
+      padding: 16px;
+    }
+  }
+
+  &__price {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 28px;
+    text-align: center;
+    display: block;
+
+    @include responsive1279 {
+      font-size: 16px;
+      line-height: 20px;
+      margin-top: 8px;
+    }
+
+    @include responsive767 {
+      margin-top: 0;
+    }
+  }
+
+  .btn {
+    justify-content: center;
+    padding: 27px 16px;
+
+    @include responsive1279 {
+      padding: 15px;
+    }
+  }
+}
+
+.additional-services {
+  background-color: $colorGray;
+
+  .caption {
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 32px;
+
+    @include responsive1279 {
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    @include responsive767 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    z-index: 3;
+
+    &:first-child {
+      .additional-services__head {
+        @include before {
+          left: -100%;
+          top: 0;
+          background-color: $colorBlack;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: -1;
+
+          @include responsive767 {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &:last-child {
+      .additional-services__body {
+        @include before {
+          width: 100%;
+          height: 100%;
+          background-color: $colorWhite;
+          left: 100%;
+          top: 0;
+
+          @include responsive767 {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__head {
+    color: $colorWhite;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: $colorBlack;
+    padding: 16px 24px 36px;
+    min-height: 214px;
+    position: relative;
+
+    @include responsive1279 {
+      gap: 4px;
+      padding: 8px 12px 18px;
+      min-height: 174px;
+    }
+
+    @include responsive767 {
+      min-height: initial;
+      padding: 8px 16px;
+    }
+  }
+
+  &__name {
+    font-family: $fontLora;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 34px;
+    text-align: left;
+
+    @include responsive1279 {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+
+  &__body {
+    width: calc(100% - 40px);
+    background-color: $colorWhite;
+    padding: 16px;
+    flex: 1;
+    position: relative;
+
+    @include responsive1279 {
+      padding: 8px;
+      width: calc(100% - 20px);
+    }
+  }
+
+  &__title {
+    font-family: $fontLora;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+
+    @include responsive1279 {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  ul {
+    margin-top: 8px;
+
+    li {
+      position: relative;
+      padding-left: 15px;
+      margin-left: 10px;
+
+      @include before {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: $colorBlack;
+        left: 0;
+        top: 7px;
+      }
+    }
+  }
+
+  .btn {
+  }
+}
