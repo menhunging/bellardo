@@ -66,10 +66,14 @@ $(document).ready(function () {
 
   if ($(".awards-slider").length > 0) {
     const swiper = new Swiper(".awards-slider", {
-      slidesPerView: 5,
+      slidesPerView: 2,
       spaceBetween: 32,
+      grid: {
+        rows: 2,
+        fill: "row",
+      },
       watchSlidesProgress: true,
-      loop: false,
+      // loop: true,
       navigation: {
         prevEl: ".awards .swiperBtnPrev",
         nextEl: ".awards .swiperBtnNext",
@@ -78,22 +82,42 @@ $(document).ready(function () {
         0: {
           slidesPerView: 1.5,
           spaceBetween: 16,
+          grid: {
+            rows: 2,
+            fill: "row",
+          },
         },
         390: {
           slidesPerView: 2.25,
           spaceBetween: 16,
+          grid: {
+            rows: 2,
+            fill: "row",
+          },
         },
         640: {
           slidesPerView: 3.3,
           spaceBetween: 16,
+          grid: {
+            rows: 2,
+            fill: "row",
+          },
         },
         768: {
-          slidesPerView: 5,
+          slidesPerView: 2,
           spaceBetween: 16,
+          grid: {
+            rows: 2,
+            fill: "row",
+          },
         },
         1280: {
-          slidesPerView: 5,
+          slidesPerView: 2,
           spaceBetween: 32,
+          grid: {
+            rows: 2,
+            fill: "row",
+          },
         },
       },
     });
@@ -140,6 +164,7 @@ $(document).ready(function () {
       slidesPerView: 3,
       watchSlidesVisibility: true,
       watchSlidesProgress: true,
+      loop: true,
     });
 
     const swiper = new Swiper(".smi-slider", {
@@ -147,7 +172,7 @@ $(document).ready(function () {
       initialSlide: 1,
       spaceBetween: 32,
       watchSlidesProgress: true,
-      loop: false,
+      loop: true,
       thumbs: {
         swiper: galleryThumbs,
       },
@@ -173,19 +198,24 @@ $(document).ready(function () {
       initialSlide: 1,
       centeredSlides: true,
       watchSlidesProgress: true,
-      loop: false,
+      // loop: true,
       navigation: {
         prevEl: ".swiperBtnPrev",
         nextEl: ".swiperBtnNext",
       },
       on: {
         init: function () {
+          let btn = $(".reviews-main__slider .swiper-slide-active").find(
+            ".reviews-main__btnMore"
+          );
+
           $(".reviews-main__slider .swiper-slide-active")
             .find(".reviews-main__text")
             .addClass("opened");
-          $(".reviews-main__slider .swiper-slide-active")
-            .find(".reviews-main__btnMore")
-            .addClass("active");
+
+          btn.addClass("active");
+
+          btn.text(btn.attr("data-text"));
         },
       },
       breakpoints: {
@@ -203,15 +233,23 @@ $(document).ready(function () {
     swiper.on("slideChange", function () {
       $(".reviews-main__text").removeClass("opened");
       $(".reviews-main__btnMore").removeClass("active");
+      $(".reviews-main__btnMore").text(
+        $(".reviews-main__btnMore").attr("data-text-default")
+      );
     });
 
     swiper.on("slideChangeTransitionStart", function () {
+      let btn = $(".reviews-main__slider .swiper-slide-active").find(
+        ".reviews-main__btnMore"
+      );
+
       $(".reviews-main__slider .swiper-slide-active")
         .find(".reviews-main__text")
         .addClass("opened");
-      $(".reviews-main__slider .swiper-slide-active")
-        .find(".reviews-main__btnMore")
-        .addClass("active");
+
+      btn.addClass("active");
+
+      btn.text(btn.attr("data-text"));
     });
 
     $(".reviews-main__btnMore").on("click", function (e) {
@@ -226,10 +264,16 @@ $(document).ready(function () {
         $(".reviews-main__text").removeClass("opened");
         $(".reviews-main__btnMore").removeClass("active");
 
+        let btnText = self.attr("data-text");
+        self.text(btnText);
+
         self.addClass("active");
         text.addClass("opened");
         swiper.slideTo(index);
       } else {
+        let btnText = self.attr("data-text-default");
+        self.text(btnText);
+
         $(".reviews-main__text").removeClass("opened");
         $(".reviews-main__btnMore").removeClass("active");
       }
@@ -241,7 +285,7 @@ $(document).ready(function () {
       slidesPerView: 1,
       spaceBetween: 32,
       watchSlidesProgress: true,
-      loop: false,
+      loop: true,
       initialSlide: $(".thanksletters__slider .swiper-slide").length,
       navigation: {
         prevEl: ".swiperBtnPrev",
@@ -281,10 +325,10 @@ $(document).ready(function () {
       allowTouchMove: false,
       watchSlidesProgress: true,
       loop: false,
-      // navigation: {
-      //   prevEl: ".swiperBtnPrev",
-      //   nextEl: ".swiperBtnNext",
-      // },
+      navigation: {
+        prevEl: ".swiperBtnPrev",
+        nextEl: ".swiperBtnNext",
+      },
       on: {
         init() {
           $(".primer-projects__slider .swiper-slide").on("click", function () {

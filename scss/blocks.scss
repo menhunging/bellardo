@@ -16,8 +16,10 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    min-height: 1000px;
+    min-height: 500px;
     z-index: 3;
+    max-height: 1120px;
+    height: calc(100vh - 120px);
 
     @include responsive1599 {
       min-height: 500px;
@@ -29,6 +31,7 @@
       font-size: 16px;
       line-height: 20px;
       min-height: 571px;
+      height: auto;
     }
 
     @include responsive1023 {
@@ -1312,20 +1315,14 @@
 
   .btn {
     width: 100%;
-    max-width: 418px;
+    max-width: 100%;
     margin: 32px auto 0;
     justify-content: center;
     text-align: center;
     display: flex;
 
     @include responsive1279 {
-      max-width: 264px;
       margin-top: 16px;
-    }
-
-    @include responsive767 {
-      width: 100%;
-      max-width: 100%;
     }
   }
 }
@@ -4387,6 +4384,19 @@
     overflow: visible;
 
     .swiper-slide {
+    }
+  }
+
+  &-controls {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 60px;
+    gap: 30px;
+
+    @include responsive767 {
+      gap: 16px;
+      margin-top: 30px;
     }
   }
 
