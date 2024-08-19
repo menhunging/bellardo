@@ -1592,6 +1592,7 @@ h4,
 .footer-form {
   display: flex;
   align-items: flex-end;
+  flex-wrap: wrap;
   gap: 32px;
   position: relative;
   z-index: 3;
@@ -1607,7 +1608,7 @@ h4,
   }
 }
 .footer-form .input-item {
-  width: 25%;
+  width: calc(25% - 32px);
 }
 @media (max-width: 767px) {
   .footer-form .input-item {
@@ -1615,7 +1616,7 @@ h4,
   }
 }
 .footer-form .btn {
-  width: 25%;
+  width: calc(25% - 32px);
   justify-content: center;
   min-height: 74px;
 }
@@ -1688,6 +1689,15 @@ h4,
 }
 .footer a:hover {
   text-decoration-color: rgb(255, 255, 255);
+}
+.footer .checkblock {
+  width: 100%;
+}
+.footer .checkblock label::before {
+  border-color: rgb(255, 255, 255);
+}
+.footer .checkblock label::after {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.6693 1L5.5026 10.1667L1.33594 6' stroke='%23fff' stroke-width='1.66667' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
 }
 
 .copyRight {
@@ -4627,6 +4637,13 @@ h4,
   .pagination ul {
     gap: 16px;
   }
+}
+.pagination li {
+  position: relative;
+  transition: all 0.3s;
+}
+.pagination li:hover {
+  transform: scale(0.9);
 }
 .pagination a {
   opacity: 0.4;

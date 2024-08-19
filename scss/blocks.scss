@@ -2847,6 +2847,12 @@
   }
 
   li {
+    position: relative;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(0.9);
+    }
   }
 
   a {
