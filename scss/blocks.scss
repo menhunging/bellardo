@@ -4998,8 +4998,7 @@
   }
 
   &__list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     margin-top: 32px;
 
     @include responsive1279 {
@@ -5007,7 +5006,6 @@
     }
 
     @include responsive767 {
-      grid-template-columns: repeat(4, 330px);
       overflow: auto;
       left: -16px;
       position: relative;
@@ -5016,7 +5014,6 @@
     }
 
     @include responsive389 {
-      grid-template-columns: repeat(4, 280px);
     }
   }
 
@@ -5024,6 +5021,17 @@
     border: solid 1px $colorBlack;
     color: $colorBlack-a6;
     transition: all 0.3s;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    @include responsive767 {
+      min-width: 330px;
+    }
+
+    @include responsive389 {
+      min-width: 280px;
+    }
 
     &:hover {
       background-color: $colorBlack;
@@ -5073,6 +5081,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    flex: 1;
 
     @include responsive1279 {
       padding: 16px;
@@ -5094,15 +5103,14 @@
     line-height: 28px;
     text-align: center;
     display: block;
+    margin-top: auto;
 
     @include responsive1279 {
       font-size: 16px;
       line-height: 20px;
-      margin-top: 8px;
     }
 
     @include responsive767 {
-      margin-top: 0;
     }
   }
 
@@ -5261,5 +5269,568 @@
   }
 
   .btn {
+  }
+}
+
+.text-section {
+  background-color: $colorGray;
+  position: relative;
+
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-family: $fontLora;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 34px;
+
+    @include responsive1279 {
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    @include responsive767 {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    p {
+      width: calc(50% - 16px);
+
+      @include responsive1439 {
+        width: calc(60% - 16px);
+      }
+
+      @include responsive1279 {
+      }
+
+      @include responsive767 {
+        width: 100%;
+      }
+    }
+  }
+
+  .caption {
+    width: calc(50% - 16px);
+
+    @include responsive1439 {
+      width: calc(40% - 16px);
+    }
+
+    @include responsive767 {
+      width: 100%;
+    }
+  }
+
+  &__body {
+    display: flex;
+    margin-top: 59px;
+
+    @include responsive1279 {
+      margin-top: 32px;
+    }
+
+    @include responsive1023 {
+      flex-direction: column;
+      margin-top: 16px;
+    }
+  }
+
+  &__media {
+    width: 50%;
+
+    @include responsive1439 {
+      width: calc(42% - 16px);
+    }
+
+    @include responsive1279 {
+      width: calc(45% - 16px);
+    }
+
+    @include responsive1023 {
+      width: 100%;
+    }
+
+    .picture {
+      padding-top: calc(394 / 660 * 100%);
+
+      @include responsive1279 {
+        padding-top: calc(247 / 352 * 100%);
+      }
+
+      @include responsive1023 {
+        padding-top: calc(248 / 358 * 100%);
+      }
+    }
+  }
+
+  .picture {
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 35px 32px;
+    background-color: $colorWhite;
+    width: 50%;
+    position: relative;
+
+    @include responsive1439 {
+      width: calc(60% - 16px);
+      padding: 16px;
+    }
+
+    @include responsive1279 {
+      gap: 8px;
+    }
+
+    @include responsive1023 {
+      width: 100%;
+    }
+
+    @include before {
+      width: 100%;
+      height: 100%;
+      left: 100%;
+      top: 0;
+      background-color: $colorWhite;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      width: 100%;
+
+      @include responsive389 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    li {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      border-left: solid 1px $colorBlack;
+      padding-left: 16px;
+
+      @include responsive1279 {
+        padding-left: 8px;
+        gap: 4px;
+      }
+
+      @include before {
+        position: relative;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='18' height='13' viewBox='0 0 18 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6.54961 13L0.849609 7.29998L2.27461 5.87498L6.54961 10.15L15.7246 0.974976L17.1496 2.39998L6.54961 13Z' fill='black'/%3e%3c/svg%3e ");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 16px;
+        height: 12px;
+
+        @include responsive1279 {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+}
+
+.primer-projects--homeStaging {
+  .primer-item__content {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .primer-item__controls {
+    margin-top: 0;
+  }
+
+  .btn {
+    @include responsive767 {
+      height: 50px;
+    }
+  }
+}
+
+.services-adv {
+  background-color: $colorGray;
+
+  .caption {
+  }
+
+  .services-adv__list {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+
+    @include responsive1279 {
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    @include responsive767 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .services-adv__item {
+    background-color: $colorWhite;
+    padding: 24px 24px 24px;
+    position: relative;
+    font-size: 22px;
+    line-height: 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    @include responsive1279 {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include responsive767 {
+      padding: 16px;
+    }
+
+    @include before {
+      position: relative;
+      min-width: 4px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: $colorBlack;
+      transform: translateY(10px);
+
+      @include responsive1023 {
+        transform: translateY(8px);
+      }
+    }
+  }
+}
+
+.steps-projects--homeStaging {
+  .steps-projects__left {
+    width: 521px;
+    height: 358px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='522' height='359' viewBox='0 0 522 359' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 1H183V47.033H244M134 179.22H436H521.5V146M344.5 358H486.25H507M54.5 277V358H194M404 47.033H476' stroke='white' stroke-dasharray='5 5'/%3e%3c/svg%3e ");
+
+    @include responsive1279 {
+      width: 281px;
+      height: 193px;
+    }
+  }
+
+  .step1 {
+  }
+
+  .step2 {
+    right: 150px;
+    top: -40px;
+
+    @include responsive1279 {
+      right: 76px;
+      top: -27px;
+    }
+  }
+
+  .step3 {
+    left: auto;
+    right: -90px;
+    top: 0px;
+
+    @include responsive1279 {
+      right: -33px;
+      top: -3px;
+    }
+  }
+
+  .step4 {
+    bottom: 100px;
+    left: -30px;
+
+    @include responsive1279 {
+      bottom: 55px;
+      left: 0px;
+    }
+  }
+
+  .step5 {
+    right: 200px;
+
+    @include responsive1279 {
+      right: 106px;
+    }
+  }
+
+  .step6 {
+    right: -135px;
+    bottom: -49px;
+
+    @include responsive1279 {
+      right: -45px;
+      bottom: -20px;
+    }
+  }
+}
+
+.steps-projects--equipment {
+  .steps-projects__left {
+    width: 502px;
+    height: 358px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='502' height='359' viewBox='0 0 502 359' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 1H183V77.033H381M502 358H344.5H244V344M436 151.5V179.22H244V196' stroke='white' stroke-dasharray='5 5'/%3e%3c/svg%3e ");
+
+    @include responsive1279 {
+      width: 249px;
+      height: 191px;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='249' height='193' viewBox='0 0 249 193' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.0664062 1.35486H97.6664V25.9058H203.266M90 121.885H232.6V81.6215M46 160.885V191.755H249' stroke='white' stroke-dasharray='2.67 2.67'/%3e%3c/svg%3e ");
+    }
+  }
+
+  .step1 {
+  }
+
+  .step2 {
+    @include responsive1279 {
+    }
+  }
+
+  .step3 {
+    top: 202px;
+    left: 159px;
+
+    @include responsive1279 {
+      top: 82px;
+      left: 19px;
+    }
+  }
+
+  .step4 {
+    bottom: -49px;
+    left: auto;
+    right: 0;
+
+    @include responsive1279 {
+      bottom: -29px;
+      right: -50px;
+    }
+  }
+}
+
+.cost-terms {
+  .cost-terms__inner {
+    display: flex;
+    align-items: flex-end;
+
+    @include responsive767 {
+      flex-direction: column;
+    }
+  }
+
+  .cost-terms__left {
+    width: 50%;
+    position: relative;
+    min-height: 710px;
+
+    @include responsive1279 {
+      min-height: 440px;
+    }
+
+    @include responsive767 {
+      width: 100%;
+      min-height: initial;
+      padding-top: calc(277 / 320 * 100%);
+    }
+  }
+
+  .picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .cost-terms__right {
+    width: 50%;
+
+    @include responsive767 {
+      width: 100%;
+    }
+  }
+
+  .cost-terms__info {
+    position: relative;
+    background-color: $colorWhite;
+    padding-left: 48px;
+    padding-right: 48px;
+    transform: translateX(-100px);
+    width: calc(100% + 100px);
+
+    @include responsive1279 {
+      padding-left: 16px;
+      padding-right: 16px;
+      transform: translateX(-50px);
+      width: calc(100% + 50px);
+    }
+
+    @include responsive767 {
+      transform: translateX(0);
+      width: 100%;
+      padding: 0;
+    }
+
+    ul {
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 28px;
+
+      @include responsive1279 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    li {
+      border-top: solid 1px $colorBlack;
+      padding: 24px 32px;
+      gap: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include responsive1279 {
+        padding: 13px 17px;
+        gap: 16px;
+      }
+
+      @include responsive767 {
+        padding: 12px 16px;
+      }
+
+      &:last-child {
+        border-bottom: solid 1px $colorBlack;
+      }
+    }
+
+    strong {
+      font-weight: 600;
+      width: 40%;
+
+      & + * {
+        width: 60%;
+      }
+    }
+
+    p {
+      padding: 24px 32px;
+      display: block;
+
+      @include responsive1279 {
+        padding: 13px 17px;
+      }
+
+      @include responsive767 {
+        padding: 12px 16px;
+      }
+    }
+  }
+
+  .caption {
+    padding: 24px 32px;
+
+    @include responsive1279 {
+      padding: 13px 17px;
+    }
+
+    @include responsive767 {
+      padding: 12px 0;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+
+    @include responsive1279 {
+      transform: translateX(-50px);
+      width: calc(100% + 50px);
+      max-width: initial;
+    }
+
+    @include responsive767 {
+      transform: translateX(0);
+      width: 100%;
+    }
+  }
+}
+
+.steps-projects--decorating {
+  .steps-projects__left {
+    width: 454px;
+    height: 269px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='455' height='270' viewBox='0 0 455 270' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 1H183V77.033H415M454 151.5V208H150V270' stroke='white' stroke-dasharray='5 5'/%3e%3c/svg%3e ");
+
+    @include responsive1279 {
+      width: 232px;
+      height: 140px;
+      top: -30px;
+    }
+
+    @include responsive767 {
+      top: 0;
+      margin-bottom: 70px;
+    }
+  }
+
+  .step1 {
+  }
+
+  .step2 {
+    right: -60px;
+    top: 0px;
+
+    @include responsive1279 {
+      right: -30px;
+      top: 4px;
+    }
+  }
+
+  .step3 {
+    bottom: -104px;
+    left: 87px;
+    top: auto;
+
+    @include responsive1279 {
+      bottom: -74px;
+      left: 44px;
+    }
   }
 }
