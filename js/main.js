@@ -419,6 +419,10 @@ $(document).ready(function () {
       spaceBetween: 32,
       watchSlidesProgress: true,
       loop: false,
+      navigation: {
+        nextEl: ".swiperBtnNext",
+        prevEl: ".swiperBtnPrev",
+      },
       breakpoints: {
         0: {
           slidesPerView: 1.07,
@@ -487,7 +491,7 @@ $(document).ready(function () {
 
     $("[data-micromodal-close]").map(function () {
       $(this).click((e) => {
-        e.preventDefault();
+        // e.preventDefault();
         if ($(this).attr("data-modal")) {
           setTimeout(() => {
             $("body").addClass("modal-open");

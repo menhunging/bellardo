@@ -161,7 +161,7 @@
                             <p>
                                 Изысканность, элегантность и выдержанность стиля
                             </p>
-                            <a href="#" class="btn btn--borderDark btn--arrow">Рассчитать стоимость</a>
+                            <a href="#prices" class="btn btn--borderDark btn--arrow">Рассчитать стоимость</a>
                         </div>
                     </div>
                 </div>
@@ -567,7 +567,7 @@
                     </div>
                 </div>
             </section>
-            <section class="prices-section">
+            <section class="prices-section" id="prices">
                 <div class="container">
                     <h2 class="caption">Стоимость дизайн-проекта жилого пространства</h2>
                     <div class="prices-section__list">
@@ -579,7 +579,7 @@
                                     этапе.
                                 </p>
                                 <span class="prices-section__price">20 000 руб. за 1 кв. м</span>
-                                <a href="#" class="btn btn--dark btn--arrow">Заказать</a>
+                                <a href="#" class="btn btn--dark btn--arrow" data-modal="modal-call">Заказать</a>
                             </div>
                         </div>
                         <div class="prices-section__item">
@@ -590,7 +590,7 @@
                                     этапе.
                                 </p>
                                 <span class="prices-section__price">20 000 руб. за 1 кв. м</span>
-                                <a href="#" class="btn btn--dark btn--arrow">Заказать</a>
+                                <a href="#" class="btn btn--dark btn--arrow" data-modal="modal-call">Заказать</a>
                             </div>
                         </div>
                         <div class="prices-section__item">
@@ -601,7 +601,7 @@
                                     этапе.
                                 </p>
                                 <span class="prices-section__price">20 000 руб. за 1 кв. м</span>
-                                <a href="#" class="btn btn--dark btn--arrow">Заказать</a>
+                                <a href="#" class="btn btn--dark btn--arrow" data-modal="modal-call">Заказать</a>
                             </div>
                         </div>
                         <div class="prices-section__item">
@@ -612,7 +612,7 @@
                                     этапе.
                                 </p>
                                 <span class="prices-section__price">20 000 руб. за 1 кв. м</span>
-                                <a href="#" class="btn btn--dark btn--arrow">Заказать</a>
+                                <a href="#" class="btn btn--dark btn--arrow" data-modal="modal-call">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -920,6 +920,10 @@
                 <div class="container">
                     <div class="video-section__head">
                         <h2 class="caption">Видео объектов</h2>
+                        <div class="video-section-controls">
+                            <button class="swiperBtnPrev swiperBtnPrev--dark"></button>
+                            <button class="swiperBtnNext swiperBtnNext--dark"></button>
+                        </div>
                         <!-- <a href="#" class="video-section__allvideo">Больше обзоров на YouTube</a> -->
                     </div>
                     <div class="sliderVideo">
@@ -1164,7 +1168,7 @@
                         <div class="modal-custom">
                             <h2 class="caption modals-caption">Заказать консультацию</h2>
 
-                            <form class="input-form">
+                            <form action="" class="input-form">
                                 <div class="input-item">
                                     <input type="text" placeholder="Имя">
                                 </div>
@@ -1172,7 +1176,13 @@
                                     <input type="text" placeholder="Телефон" class="phone-input">
                                 </div>
                                 <button class="btn btn--dark btn--arrow">Отправить заявку</button>
+                                <div class="checkblock">
+                                    <input type="checkbox" id="pers1" />
+                                    <label for="pers1">Подтверждаю, что я ознакомлен и согласен с условиями <a
+                                            href="#">политики конфиденциальности</a></label>
+                                </div>
                             </form>
+
                         </div>
                     </div>
                 </div>

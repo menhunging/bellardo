@@ -3643,6 +3643,11 @@ h4,
     background-size: contain;
   }
 }
+.video-section-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 .video-section .sliderVideo {
   margin-top: 32px;
 }
@@ -6692,7 +6697,7 @@ h4,
   }
 }
 .steps-slider .btn {
-  width: 100%;
+  width: calc(100% - 2px);
   margin-top: auto;
   justify-content: center;
 }

@@ -1886,6 +1886,12 @@
     }
   }
 
+  &-controls{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
   .sliderVideo {
     margin-top: 32px;
 
@@ -4888,7 +4894,7 @@
   }
 
   .btn {
-    width: 100%;
+    width: calc(100% - 2px);
     margin-top: auto;
     justify-content: center;
 

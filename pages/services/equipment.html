@@ -163,7 +163,7 @@
                                 строительных материалов, мебели, предметов интерьера и декора, бытовой техники и
                                 оборудования
                             </p>
-                            <a href="#" class="btn btn--borderDark btn--arrow">Рассчитать стоимость</a>
+                            <a href="#prices" class="btn btn--borderDark btn--arrow">Рассчитать стоимость</a>
                         </div>
                     </div>
                 </div>
@@ -231,6 +231,10 @@
                 <div class="container">
                     <div class="video-section__head">
                         <h2 class="caption">Видео объектов</h2>
+                        <div class="video-section-controls">
+                            <button class="swiperBtnPrev swiperBtnPrev--dark"></button>
+                            <button class="swiperBtnNext swiperBtnNext--dark"></button>
+                        </div>
                         <!-- <a href="#" class="video-section__allvideo">Больше обзоров на YouTube</a> -->
                     </div>
                     <div class="sliderVideo">
@@ -396,7 +400,7 @@
                     </div>
                 </div>
             </section>
-            <section class="cost-terms">
+            <section class="cost-terms" id="prices">
                 <div class="container">
                     <div class="cost-terms__inner">
                         <div class="cost-terms__left">
@@ -429,7 +433,7 @@
                                     количество, стоимость и другая важная информация.
                                 </p>
                             </div>
-                            <a href="#" class="btn btn--dark btn--arrow">Заказать</a>
+                            <a href="#" class="btn btn--dark btn--arrow" data-modal="modal-call">Заказать</a>
                         </div>
                     </div>
                 </div>
@@ -639,7 +643,7 @@
                         <div class="modal-custom">
                             <h2 class="caption modals-caption">Заказать консультацию</h2>
 
-                            <form class="input-form">
+                            <form action="" class="input-form">
                                 <div class="input-item">
                                     <input type="text" placeholder="Имя">
                                 </div>
@@ -647,7 +651,13 @@
                                     <input type="text" placeholder="Телефон" class="phone-input">
                                 </div>
                                 <button class="btn btn--dark btn--arrow">Отправить заявку</button>
+                                <div class="checkblock">
+                                    <input type="checkbox" id="pers1" />
+                                    <label for="pers1">Подтверждаю, что я ознакомлен и согласен с условиями <a
+                                            href="#">политики конфиденциальности</a></label>
+                                </div>
                             </form>
+
                         </div>
                     </div>
                 </div>

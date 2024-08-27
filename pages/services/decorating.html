@@ -162,7 +162,7 @@
                                 Декорирование интерьера – это подбор, компоновка и комплектация пространства предметами
                                 мебели, аксессуарами, текстилем, картинами и функциональными элементами
                             </p>
-                            <a href="#" class="btn btn--borderDark btn--arrow">Рассчитать стоимость</a>
+                            <a href="#prices" class="btn btn--borderDark btn--arrow">Рассчитать стоимость</a>
                         </div>
                     </div>
                 </div>
@@ -406,7 +406,7 @@
                     </div>
                 </div>
             </section>
-            <section class="cost-terms">
+            <section class="cost-terms" id="prices">
                 <div class="container">
                     <div class="cost-terms__inner">
                         <div class="cost-terms__left">
@@ -439,7 +439,7 @@
                                     индивидуальность и наполнят его особой атмосферой.
                                 </p>
                             </div>
-                            <a href="#" class="btn btn--dark btn--arrow">Заказать</a>
+                            <a href="#" class="btn btn--dark btn--arrow" data-modal="modal-call">Заказать</a>
                         </div>
                     </div>
                 </div>
@@ -620,7 +620,7 @@
                         <div class="modal-custom">
                             <h2 class="caption modals-caption">Заказать консультацию</h2>
 
-                            <form class="input-form">
+                            <form action="" class="input-form">
                                 <div class="input-item">
                                     <input type="text" placeholder="Имя">
                                 </div>
@@ -628,7 +628,13 @@
                                     <input type="text" placeholder="Телефон" class="phone-input">
                                 </div>
                                 <button class="btn btn--dark btn--arrow">Отправить заявку</button>
+                                <div class="checkblock">
+                                    <input type="checkbox" id="pers1" />
+                                    <label for="pers1">Подтверждаю, что я ознакомлен и согласен с условиями <a
+                                            href="#">политики конфиденциальности</a></label>
+                                </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
