@@ -414,13 +414,25 @@
 
   &-slider {
     margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
 
     @include responsive1279 {
       margin-top: 16px;
     }
 
+    @include responsive1023{
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     @include responsive767 {
       overflow: visible;
+    }
+
+    @include responsive479{
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
     }
   }
 
@@ -433,6 +445,7 @@
     padding-right: 8px;
     padding-bottom: 20px;
     color: $colorBlack;
+    z-index: 3;
 
     @include responsive1279 {
       gap: 9px;
@@ -466,6 +479,7 @@
       background-color: $colorBlack;
       left: 0;
       top: 0;
+      pointer-events: none;
       z-index: -1;
 
       @include responsive1279 {
@@ -1834,6 +1848,8 @@
 }
 
 .video-section {
+  overflow: hidden;
+
   &__head {
     display: flex;
     align-items: center;

@@ -64,64 +64,64 @@ $(document).ready(function () {
     });
   }
 
-  if ($(".awards-slider").length > 0) {
-    const swiper = new Swiper(".awards-slider", {
-      slidesPerView: 2,
-      spaceBetween: 32,
-      grid: {
-        rows: 2,
-        fill: "row",
-      },
-      watchSlidesProgress: true,
-      // loop: true,
-      navigation: {
-        prevEl: ".awards .swiperBtnPrev",
-        nextEl: ".awards .swiperBtnNext",
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1.5,
-          spaceBetween: 16,
-          grid: {
-            rows: 2,
-            fill: "row",
-          },
-        },
-        390: {
-          slidesPerView: 2.25,
-          spaceBetween: 16,
-          grid: {
-            rows: 2,
-            fill: "row",
-          },
-        },
-        640: {
-          slidesPerView: 3.3,
-          spaceBetween: 16,
-          grid: {
-            rows: 2,
-            fill: "row",
-          },
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 16,
-          grid: {
-            rows: 2,
-            fill: "row",
-          },
-        },
-        1280: {
-          slidesPerView: 2,
-          spaceBetween: 32,
-          grid: {
-            rows: 2,
-            fill: "row",
-          },
-        },
-      },
-    });
-  }
+  // if ($(".awards-slider").length > 0) {
+  //   const swiper = new Swiper(".awards-slider", {
+  //     slidesPerView: 2,
+  //     spaceBetween: 32,
+  //     grid: {
+  //       rows: 2,
+  //       fill: "row",
+  //     },
+  //     watchSlidesProgress: true,
+  //     // loop: true,
+  //     navigation: {
+  //       prevEl: ".awards .swiperBtnPrev",
+  //       nextEl: ".awards .swiperBtnNext",
+  //     },
+  //     breakpoints: {
+  //       0: {
+  //         slidesPerView: 1.5,
+  //         spaceBetween: 16,
+  //         grid: {
+  //           rows: 2,
+  //           fill: "row",
+  //         },
+  //       },
+  //       390: {
+  //         slidesPerView: 2.25,
+  //         spaceBetween: 16,
+  //         grid: {
+  //           rows: 2,
+  //           fill: "row",
+  //         },
+  //       },
+  //       640: {
+  //         slidesPerView: 3.3,
+  //         spaceBetween: 16,
+  //         grid: {
+  //           rows: 2,
+  //           fill: "row",
+  //         },
+  //       },
+  //       768: {
+  //         slidesPerView: 2,
+  //         spaceBetween: 16,
+  //         grid: {
+  //           rows: 2,
+  //           fill: "row",
+  //         },
+  //       },
+  //       1280: {
+  //         slidesPerView: 2,
+  //         spaceBetween: 32,
+  //         grid: {
+  //           rows: 2,
+  //           fill: "row",
+  //         },
+  //       },
+  //     },
+  //   });
+  // }
 
   if ($(".projects-tabs__slider").length > 0) {
     const swiper = new Swiper(".projects-tabs__slider", {
