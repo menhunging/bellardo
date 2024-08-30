@@ -422,7 +422,7 @@
       margin-top: 16px;
     }
 
-    @include responsive1023{
+    @include responsive1023 {
       grid-template-columns: repeat(3, 1fr);
     }
 
@@ -430,7 +430,7 @@
       overflow: visible;
     }
 
-    @include responsive479{
+    @include responsive479 {
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
@@ -696,6 +696,17 @@
 .projects-tabs {
   position: relative;
 
+  &.aos-animate{
+    .tabsBody {
+      &.active {
+        .projects-tabs__slider {
+          transform: translateX(0%);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   .linkSite {
     z-index: 5;
     margin-left: auto;
@@ -811,14 +822,14 @@
     }
   }
 
-  .tabsBody {
-  }
-
   &__slider {
     position: relative;
     z-index: 5;
     margin-top: 32px;
     overflow: visible;
+    transform: translateX(100%);
+    transition: opacity 0.7s, transform 0.7s !important;
+    opacity: 0;
 
     @include responsive1279 {
       margin-top: 16px;

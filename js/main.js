@@ -442,10 +442,35 @@ $(document).ready(function () {
     });
   }
 
+  if ($(".services-tabs__tabs").length > 0) {
+    $(".services-tabs__tabs .listLinks li a").on("click", function (e) {
+      e.preventDefault();
+    });
+
+    $(".services-tabs__tabs").tabslet({
+      mouseevent: "hover",
+      attribute: "href",
+      animation: false,
+    });
+  }
+
+  if ($(".projects-tabs__tabs").length > 0) {
+    $(".projects-tabs__tabs .listLinks li a").on("click", function (e) {
+      e.preventDefault();
+
+      let href = $(this).attr("href");
+
+      $(".tabsBody").removeClass("active");
+
+      setTimeout(function () {
+        $(".projects-tabs").find(`.tabsBody${href}`).addClass("active");
+      }, 100);
+    });
+  }
+
   if ($("[data-aos]").length > 0) {
     AOS.init({
       delay: 0,
-      // duration: 1200,
     });
   }
 });
