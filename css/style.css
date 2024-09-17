@@ -7963,5 +7963,50 @@ h4,
     margin-top: 8px;
   }
 }
+.not-page {
+  border-top: solid 1px rgb(27, 25, 34);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 32px;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  padding: 15px;
+}
+@media (max-width: 1279px) {
+  .not-page {
+    gap: 16px;
+  }
+}
+.not-page img {
+  pointer-events: none;
+}
+@media (max-width: 1279px) {
+  .not-page img {
+    height: 80px;
+  }
+}
+.not-page p {
+  margin-top: 32px;
+}
+@media (max-width: 1279px) {
+  .not-page p {
+    margin-top: 16px;
+  }
+}
+.not-page .btn {
+  width: 100%;
+  max-width: 217px;
+  text-align: center;
+  justify-content: center;
+}
+@media (max-width: 1279px) {
+  .not-page .btn {
+    max-width: 187px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

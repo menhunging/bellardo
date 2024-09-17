@@ -6083,7 +6083,7 @@
       margin-top: 16px;
     }
 
-    @include responsive389{
+    @include responsive389 {
       font-size: 14px;
     }
 
@@ -6107,6 +6107,51 @@
 
       strong {
       }
+    }
+  }
+}
+
+.not-page {
+  border-top: solid 1px $colorBlack;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 32px;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  padding: 15px;
+
+  @include responsive1279 {
+    gap: 16px;
+  }
+
+  img {
+    pointer-events: none;
+
+    @include responsive1279 {
+      height: 80px;
+    }
+  }
+
+  p {
+    margin-top: 32px;
+
+    @include responsive1279 {
+      margin-top: 16px;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 217px;
+    text-align: center;
+    justify-content: center;
+
+    @include responsive1279 {
+      max-width: 187px;
     }
   }
 }
