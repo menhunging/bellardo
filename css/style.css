@@ -1818,6 +1818,7 @@ h4,
   font-size: 22px;
   line-height: 28px;
   width: 100%;
+  padding: 0;
 }
 @media (max-width: 1279px) {
   .grettings {
@@ -1911,12 +1912,26 @@ h4,
   z-index: -1;
 }
 .grettings-slider {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: auto;
+  min-height: 890px;
+}
+@media (max-width: 1439px) {
+  .grettings-slider {
+    min-height: 750px;
+  }
+}
+@media (max-width: 1279px) {
+  .grettings-slider {
+    min-height: 550px;
+  }
+}
+.grettings-slider .swiper-slide {
+  overflow: hidden;
 }
 .grettings-slider-controls {
   position: absolute;
