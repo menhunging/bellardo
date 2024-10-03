@@ -5,8 +5,19 @@
   line-height: 28px;
   width: 100%;
   padding: 0;
+  z-index: auto;
+  min-height: 890px;
+
+  @include responsive1599 {
+    min-height: 800px;
+  }
+
+  @include responsive1439 {
+    min-height: 750px;
+  }
 
   @include responsive1279 {
+    min-height: 550px;
     font-size: 16px;
     line-height: 20px;
   }
@@ -17,22 +28,13 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    min-height: 500px;
     z-index: 3;
-    max-height: 1120px;
-    height: calc(100vh - 120px);
-
-    @include responsive1599 {
-      min-height: 500px;
-      max-height: 800px;
-      height: calc(100vh - 100px);
-    }
+    width: 100%;
+    height: 100%;
 
     @include responsive1279 {
       font-size: 16px;
       line-height: 20px;
-      min-height: 571px;
-      height: auto;
     }
 
     @include responsive1023 {
@@ -88,21 +90,11 @@
   }
 
   &-slider {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: auto;
-    min-height: 890px;
-
-    @include responsive1439 {
-      min-height: 750px;
-    }
-
-    @include responsive1279 {
-      min-height: 550px;
-    }
 
     .swiper-slide {
       overflow: hidden;
@@ -236,6 +228,14 @@
       right: 20px;
       bottom: 70px;
     }
+  }
+
+  & > .grettings-content{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -602,12 +602,17 @@
 
   &__text {
     background-color: $colorGray;
-    padding: 70px;
+    padding: 50px;
     width: 50%;
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    min-height: 410px;
+
+    @include responsive1439 {
+      padding: 30px;
+    }
 
     @include responsive1279 {
       padding: 38px;
@@ -618,6 +623,7 @@
       width: 100%;
       padding: 16px;
       order: 2;
+      min-height: initial;
     }
 
     ul {
@@ -852,6 +858,9 @@
     .swiper-slide {
       background-color: $colorWhite;
       padding: 30px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
 
       @include responsive1279 {
         padding: 16px;
@@ -860,8 +869,8 @@
       .picture {
         width: 100%;
         height: 357px;
-        margin-bottom: 20px;
         @include invisLink;
+        margin-bottom: 20px;
 
         &:hover {
           a {
@@ -919,13 +928,21 @@
     line-height: 28px;
     text-align: left;
     display: block;
-    margin-bottom: 20px;
+    min-height: 56px;
 
     @include responsive1279 {
       font-size: 16px;
       line-height: 20px;
-      margin-bottom: 10px;
+      min-height: 45px;
     }
+  }
+
+  p {
+    margin-top: auto;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
   }
 
   .linkSite--mobile {
@@ -1005,7 +1022,7 @@
       width: 100%;
     }
 
-    @include responsive479{
+    @include responsive479 {
       font-size: 14px;
       line-height: 20px;
       text-align: center;
@@ -1148,7 +1165,7 @@
 
       .swiperBtnNext,
       .swiperBtnPrev {
-        display: flex!important;
+        display: flex !important;
       }
     }
 
@@ -1672,6 +1689,8 @@
   }
 
   &__dol {
+    min-height: 40px;
+    text-align: center;
   }
 
   &__controls {
@@ -4047,7 +4066,7 @@
     word-break: break-word;
     // word-break: break-all;
 
-    @include responsive1439{
+    @include responsive1439 {
       font-size: 16px;
       line-height: 18px;
     }
@@ -4061,7 +4080,7 @@
       padding-left: 5px;
     }
 
-    @include responsive1023{
+    @include responsive1023 {
       font-size: 12px;
       line-height: 14px;
     }
@@ -5255,7 +5274,7 @@
       }
     }
 
-    &:last-child {
+    :nth-child(3n) {
       .additional-services__body {
         @include before {
           width: 100%;
@@ -5269,6 +5288,9 @@
           }
         }
       }
+    }
+
+    &:last-child {
     }
   }
 

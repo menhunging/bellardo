@@ -159,9 +159,33 @@
 .copyRight {
   text-align: center;
   padding: 20px 0;
+  position: relative;
 
   @include responsive767 {
     padding: 18px 0;
+  }
+
+  &__inner {
+    position: relative;
+
+    @include responsive479 {
+    }
+  }
+
+  .develop {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include responsive479 {
+      position: relative;
+      top: auto;
+      transform: translateY(0);
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
   }
 }
 

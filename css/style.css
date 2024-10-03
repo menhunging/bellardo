@@ -1766,10 +1766,30 @@ h4,
 .copyRight {
   text-align: center;
   padding: 20px 0;
+  position: relative;
 }
 @media (max-width: 767px) {
   .copyRight {
     padding: 18px 0;
+  }
+}
+.copyRight__inner {
+  position: relative;
+}
+.copyRight .develop {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (max-width: 479px) {
+  .copyRight .develop {
+    position: relative;
+    top: auto;
+    transform: translateY(0);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
   }
 }
 
@@ -1819,9 +1839,22 @@ h4,
   line-height: 28px;
   width: 100%;
   padding: 0;
+  z-index: auto;
+  min-height: 890px;
+}
+@media (max-width: 1599px) {
+  .grettings {
+    min-height: 800px;
+  }
+}
+@media (max-width: 1439px) {
+  .grettings {
+    min-height: 750px;
+  }
 }
 @media (max-width: 1279px) {
   .grettings {
+    min-height: 550px;
     font-size: 16px;
     line-height: 20px;
   }
@@ -1832,24 +1865,14 @@ h4,
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  min-height: 500px;
   z-index: 3;
-  max-height: 1120px;
-  height: calc(100vh - 120px);
-}
-@media (max-width: 1599px) {
-  .grettings-content {
-    min-height: 500px;
-    max-height: 800px;
-    height: calc(100vh - 100px);
-  }
+  width: 100%;
+  height: 100%;
 }
 @media (max-width: 1279px) {
   .grettings-content {
     font-size: 16px;
     line-height: 20px;
-    min-height: 571px;
-    height: auto;
   }
 }
 @media (max-width: 1023px) {
@@ -1912,23 +1935,11 @@ h4,
   z-index: -1;
 }
 .grettings-slider {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: auto;
-  min-height: 890px;
-}
-@media (max-width: 1439px) {
-  .grettings-slider {
-    min-height: 750px;
-  }
-}
-@media (max-width: 1279px) {
-  .grettings-slider {
-    min-height: 550px;
-  }
 }
 .grettings-slider .swiper-slide {
   overflow: hidden;
@@ -2073,6 +2084,13 @@ h4,
     right: 20px;
     bottom: 70px;
   }
+}
+.grettings > .grettings-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .designBellardo {
@@ -2444,12 +2462,18 @@ h4,
 }
 .services-tabs__text {
   background-color: rgb(248, 247, 246);
-  padding: 70px;
+  padding: 50px;
   width: 50%;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-height: 410px;
+}
+@media (max-width: 1439px) {
+  .services-tabs__text {
+    padding: 30px;
+  }
 }
 @media (max-width: 1279px) {
   .services-tabs__text {
@@ -2462,6 +2486,7 @@ h4,
     width: 100%;
     padding: 16px;
     order: 2;
+    min-height: initial;
   }
 }
 .services-tabs__text ul {
@@ -2696,6 +2721,9 @@ h4,
 .projects-tabs__slider .swiper-slide {
   background-color: rgb(255, 255, 255);
   padding: 30px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 @media (max-width: 1279px) {
   .projects-tabs__slider .swiper-slide {
@@ -2705,9 +2733,9 @@ h4,
 .projects-tabs__slider .swiper-slide .picture {
   width: 100%;
   height: 357px;
-  margin-bottom: 20px;
   position: relative;
   z-index: 1;
+  margin-bottom: 20px;
 }
 .projects-tabs__slider .swiper-slide .picture > a {
   display: block;
@@ -2770,14 +2798,21 @@ h4,
   line-height: 28px;
   text-align: left;
   display: block;
-  margin-bottom: 20px;
+  min-height: 56px;
 }
 @media (max-width: 1279px) {
   .projects-tabs__name {
     font-size: 16px;
     line-height: 20px;
-    margin-bottom: 10px;
+    min-height: 45px;
   }
+}
+.projects-tabs p {
+  margin-top: auto;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
 }
 .projects-tabs .linkSite--mobile {
   display: none;
@@ -3484,6 +3519,10 @@ h4,
   font-size: 22px;
   line-height: 28px;
   font-weight: 600;
+}
+.reviews-main__dol {
+  min-height: 40px;
+  text-align: center;
 }
 .reviews-main__controls {
   display: flex;
@@ -7110,7 +7149,7 @@ h4,
     display: none;
   }
 }
-.additional-services__item:last-child .additional-services__body::before {
+.additional-services__item :nth-child(3n) .additional-services__body::before {
   content: "";
   position: absolute;
   -webkit-transition: all 0.3s;
@@ -7124,7 +7163,7 @@ h4,
   top: 0;
 }
 @media (max-width: 767px) {
-  .additional-services__item:last-child .additional-services__body::before {
+  .additional-services__item :nth-child(3n) .additional-services__body::before {
     display: none;
   }
 }
